@@ -1,0 +1,17 @@
+# @package validation
+run_id: ${now:%Y%m%d_%H%M%S}
+output_dir: ${paths.reports}/validation/${validation.run_id}
+report_path: ${validation.output_dir}/validation_report.json
+best_synthetic_path: ${paths.data_processed}/best_synthetic.csv
+
+real_path: ${data.raw_path}
+synthetic_dir: ${paths.data_synthetic}
+synthetic_pattern: "synthetic_{size}.csv"
+sizes:
+  - 5000
+  - 10000
+  - 25000
+  - 50000
+
+pass_threshold: 0.85
+ks_alpha: 0.05

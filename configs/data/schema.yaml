@@ -1,0 +1,84 @@
+# @package data
+raw_filename: WA_Fn-UseC_-HR-Employee-Attrition.csv
+target_column: Attrition
+
+drop_columns:
+  - EmployeeNumber
+  - Over18
+  - StandardHours
+
+columns:
+  Age: int64
+  Attrition: object
+  BusinessTravel: object
+  DailyRate: int64
+  Department: object
+  DistanceFromHome: int64
+  Education: int64
+  EducationField: object
+  EmployeeCount: int64
+  EmployeeNumber: int64
+  EnvironmentSatisfaction: int64
+  Gender: object
+  HourlyRate: int64
+  JobInvolvement: int64
+  JobLevel: int64
+  JobRole: object
+  JobSatisfaction: int64
+  MaritalStatus: object
+  MonthlyIncome: int64
+  MonthlyRate: int64
+  NumCompaniesWorked: int64
+  Over18: object
+  OverTime: object
+  PercentSalaryHike: int64
+  PerformanceRating: int64
+  RelationshipSatisfaction: int64
+  StandardHours: int64
+  StockOptionLevel: int64
+  TotalWorkingYears: int64
+  TrainingTimesLastYear: int64
+  WorkLifeBalance: int64
+  YearsAtCompany: int64
+  YearsInCurrentRole: int64
+  YearsSinceLastPromotion: int64
+  YearsWithCurrManager: int64
+
+numerical_columns:
+  - Age
+  - DailyRate
+  - DistanceFromHome
+  - Education
+  - EmployeeCount
+  - EnvironmentSatisfaction
+  - HourlyRate
+  - JobInvolvement
+  - JobLevel
+  - JobSatisfaction
+  - MonthlyIncome
+  - MonthlyRate
+  - NumCompaniesWorked
+  - PercentSalaryHike
+  - PerformanceRating
+  - RelationshipSatisfaction
+  - StockOptionLevel
+  - TotalWorkingYears
+  - TrainingTimesLastYear
+  - WorkLifeBalance
+  - YearsAtCompany
+  - YearsInCurrentRole
+  - YearsSinceLastPromotion
+  - YearsWithCurrManager
+
+categorical_columns:
+  - BusinessTravel
+  - Department
+  - EducationField
+  - Gender
+  - JobRole
+  - MaritalStatus
+  - OverTime
+
+kaggle:
+  dataset: pavansubhasht/ibm-hr-analytics-attrition-dataset
+  file: WA_Fn-UseC_-HR-Employee-Attrition.csv

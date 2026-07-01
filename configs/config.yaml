@@ -1,0 +1,38 @@
+defaults:
+  - data: schema
+  - eda: eda
+  - hardware: hardware
+  - preprocessing: preprocessing
+  - training: training
+  - synthetic: synthetic
+  - validation: validation
+  - features: features
+  - evaluation: evaluation
+  - explainability: explainability
+  - deployment: api
+  - _self_
+
+project:
+  name: employee-attrition
+  version: "0.1.0"
+
+paths:
+  project_root: ${oc.env:PROJECT_ROOT,.}
+  data_raw: ${paths.project_root}/data/raw
+  data_synthetic: ${paths.project_root}/data/synthetic
+  data_processed: ${paths.project_root}/data/processed
+  models: ${paths.project_root}/models
+  reports: ${paths.project_root}/reports
+  outputs: ${paths.project_root}/outputs
+
+data:
+  raw_filename: WA_Fn-UseC_-HR-Employee-Attrition.csv
+  raw_path: ${paths.data_raw}/${data.raw_filename}
+  target_column: Attrition
+
+logging:
+  level: INFO
+  format: "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+
+seed: 42

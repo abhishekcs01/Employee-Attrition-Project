@@ -1,0 +1,38 @@
+# @package eda
+run_id: ${now:%Y%m%d_%H%M%S}
+output_dir: ${paths.reports}/eda/${eda.run_id}
+plots_dir: ${eda.output_dir}/plots
+
+plot_format: png
+dpi: 150
+figsize: [10, 6]
+style: seaborn-v0_8-whitegrid
+
+pairplot:
+  max_features: 6
+  sample_size: 500
+
+correlation:
+  method: pearson
+  annot: true
+  cmap: RdBu_r
+
+profiling:
+  minimal: false
+  explorative: true
+  title: IBM HR Employee Attrition - EDA Profile Report
+
+outlier:
+  iqr_multiplier: 1.5
+
+target_analysis:
+  positive_class: "Yes"
+  negative_class: "No"
+
+insights:
+  top_n_categories: 5
+  satisfaction_columns:
+    - EnvironmentSatisfaction
+    - JobSatisfaction
+    - RelationshipSatisfaction
+    - WorkLifeBalance

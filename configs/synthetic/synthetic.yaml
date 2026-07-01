@@ -1,0 +1,19 @@
+# @package synthetic
+run_id: ${now:%Y%m%d_%H%M%S}
+output_dir: ${paths.data_synthetic}
+model_path: ${paths.models}/ctgan_${synthetic.run_id}.pkl
+
+raw_path: ${data.raw_path}
+sizes:
+  - 5000
+  - 10000
+  - 25000
+  - 50000
+
+ctgan:
+  epochs: 300
+  batch_size: 500
+  verbose: false
+  enable_gpu: true
+
+random_state: ${seed}

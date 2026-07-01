@@ -1,0 +1,19 @@
+# @package features
+run_id: ${now:%Y%m%d_%H%M%S}
+output_dir: ${paths.reports}/features
+output_path: ${paths.data_processed}/engineered_features.csv
+dictionary_path: ${features.output_dir}/feature_dictionary.md
+
+input_path: ${data.raw_path}
+random_state: ${seed}
+
+career_stage_bins:
+  Early: [0, 3]
+  Mid: [4, 10]
+  Senior: [11, 100]
+
+tenure_band_bins:
+  New: [0, 2]
+  Established: [3, 5]
+  Veteran: [6, 10]
+  LongTenure: [11, 100]

@@ -1,0 +1,24 @@
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../models:/app/models
+      - ../data:/app/data
+    environment:
+      - MODELS_DIR=/app/models/latest
+    command: python -m src.deployment.api.main
+
+  streamlit:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8501:8501"
+    volumes:
+      - ../models:/app/models
+      - ../data:/app/data
+    command: streamlit run src/deployment/streamlit_app/app.py --server.port=8501 --server.address=0.0.0.0

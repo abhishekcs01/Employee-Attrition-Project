@@ -1,0 +1,12 @@
+# @package evaluation
+run_id: ${now:%Y%m%d_%H%M%S}
+output_dir: ${paths.reports}/evaluation/${evaluation.run_id}
+
+models_dir: ${paths.models}/latest
+dataset_path: ${paths.data_processed}/engineered_features.csv
+target_column: ${data.target_column}
+positive_class: "Yes"
+negative_class: "No"
+classification_threshold: 0.5
+
+random_state: ${seed}

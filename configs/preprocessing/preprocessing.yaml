@@ -1,0 +1,34 @@
+# @package preprocessing
+dataset_path: ${paths.data_processed}/engineered_features.csv
+target_column: ${data.target_column}
+positive_class: "Yes"
+negative_class: "No"
+
+split:
+  train_size: 0.70
+  val_size: 0.15
+  test_size: 0.15
+  random_state: ${seed}
+  stratify: true
+
+smote:
+  enabled: true
+  random_state: ${seed}
+  k_neighbors: 5
+
+drop_columns: ${data.drop_columns}
+
+categorical_columns:
+  - BusinessTravel
+  - Department
+  - EducationField
+  - Gender
+  - JobRole
+  - MaritalStatus
+  - OverTime
+  - CareerStage
+  - TenureBand
+
+numerical_columns: null
+
+classification_threshold: 0.5

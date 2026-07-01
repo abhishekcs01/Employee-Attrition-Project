@@ -1,0 +1,4 @@
+# @package hardware
+# Automatic compute backend detection. These settings are internal tuning knobs.
+
+probe_ml_backends: true

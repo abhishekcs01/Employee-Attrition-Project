@@ -1,0 +1,16 @@
+# @package explainability
+run_id: ${now:%Y%m%d_%H%M%S}
+output_dir: ${paths.reports}/explainability/${explainability.run_id}
+
+models_dir: ${paths.models}/latest
+dataset_path: ${paths.data_processed}/engineered_features.csv
+target_column: ${data.target_column}
+positive_class: "Yes"
+negative_class: "No"
+
+sample_size: 200
+max_display: 20
+plot_format: png
+dpi: 150
+
+random_state: ${seed}
